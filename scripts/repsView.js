@@ -103,13 +103,13 @@ function writeRepNode(name, officeName, party, phone, site, photo, address) {
     
     var s = '<li class = "rep-list-group-item">' + imgNode + '<div class = "contact-info"><strong>' + name + '</strong>';
 
-    var info = [party, officeName, phone, site, address];
+    var info = [party, officeName, phone, address, site];
     for (var i = 0; i < info.length; i++) {
         if (info[i] == '') continue; 
         if (i == 2) // phone
             s += '<abbr title = "Phone"></abbr>';
         
-        if (i == 3) {// site
+        if (i == 4) {// site
             s += '<br><a href ="' + info[i] + '">' + info[i] + '</a>';
             continue;
         }
