@@ -5,7 +5,7 @@
 
 $.getScript("http://apis.google.com/js/client.js?onload=load", function() {});
 
-openState(25.75,-80.36);
+// openState(25.75,-80.36);
 
 function openState(lat,long) {
     $.ajax({ 
