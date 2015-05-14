@@ -3,8 +3,6 @@
  * Execute request to look up representative info for provided location.
  */
 
-openState(25.75,-80.36);
-
 $.getScript("http://apis.google.com/js/client.js?onload=load", function() {});
 
 function openState(lat,long) {
@@ -107,8 +105,9 @@ function writeRepNode(name, officeName, party, phone, site, photo, address) {
  * Format and render results in the DOM.
  */
 function renderResults(response, rawResponse) {
-    alert("render results runs");
-
+    // apparently this function only runs if 
+    // it's online, not local.
+    
     var locationId = document.getElementById('locationBlock');
     if (!response || response.error || response.status !== 'success') {
         locationId.innerHTML = '<div class = "alert alert-danger">Sorry, we were unable to locate information for the address entered. <a href = "index.html" class = "alert-link"><br>Try again?</a></div>';
@@ -250,6 +249,7 @@ function lookup(address, callback) {
         'params': {'includeOffices': 'true'},
         'body': {'address': address}
     });
+    // ^^ this request only runs if it's online, not local
 
     req.execute(callback);
 
@@ -259,7 +259,6 @@ function lookup(address, callback) {
  */
 
 function load() {
-    // alert("load runs");
     gapi.client.setApiKey('AIzaSyCN9rkEJ848kuw9-YO7vZ41Mt7v2bhckcs');
     var addr = parseUrl('inputAddress');
     lookup(addr, renderResults);
