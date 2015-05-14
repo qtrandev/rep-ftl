@@ -3,7 +3,7 @@
  * Execute request to look up representative info for provided location.
  */
 
-//openState(25.75,-80.36);
+openState(25.75,-80.36);
 
 $.getScript("http://apis.google.com/js/client.js?onload=load", function() {});
 
@@ -74,16 +74,6 @@ function openState(lat,long) {
 });
 
 }
-function lookup(address, callback) {
-    //Request object
-    var req = gapi.client.request({
-        'path': '/civicinfo/us_v1/representatives/lookup',
-        'method': 'POST',
-        'params': {'includeOffices': 'true'},
-        'body': {'address': address}
-    });
-    req.execute(callback);
-}
 
 function truncate(str) {
     if (str.length > 50) {
@@ -117,6 +107,8 @@ function writeRepNode(name, officeName, party, phone, site, photo, address) {
  * Format and render results in the DOM.
  */
 function renderResults(response, rawResponse) {
+    alert("render results runs");
+
     var locationId = document.getElementById('locationBlock');
     if (!response || response.error || response.status !== 'success') {
         locationId.innerHTML = '<div class = "alert alert-danger">Sorry, we were unable to locate information for the address entered. <a href = "index.html" class = "alert-link"><br>Try again?</a></div>';
@@ -250,11 +242,24 @@ function parseUrl(str) {
         return results[1];
 }
 
+function lookup(address, callback) {
+    //Request object
+    var req = gapi.client.request({
+        'path': '/civicinfo/us_v1/representatives/lookup',
+        'method': 'POST',
+        'params': {'includeOffices': 'true'},
+        'body': {'address': address}
+    });
+
+    req.execute(callback);
+
+}
 /**
  * Initialize the Google Civic Information API client, and make a request.
  */
 
 function load() {
+    // alert("load runs");
     gapi.client.setApiKey('AIzaSyCN9rkEJ848kuw9-YO7vZ41Mt7v2bhckcs');
     var addr = parseUrl('inputAddress');
     lookup(addr, renderResults);
