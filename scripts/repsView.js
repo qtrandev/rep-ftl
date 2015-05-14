@@ -5,6 +5,8 @@
 
 $.getScript("http://apis.google.com/js/client.js?onload=load", function() {});
 
+openState(25.75,-80.36);
+
 function openState(lat,long) {
     $.ajax({ 
         type: "GET",
@@ -98,6 +100,23 @@ function writeRepNode(name, officeName, party, phone, site, photo, address) {
         imgNode = '<span class= "rep-icon glyphicon glyphicon-user"></span>';
     else
         imgNode = '<img alt = "rep_photo" class="rep-img"' + photo + ' >';
+    
+    var s = '<li class = "rep-list-group-item">' + imgNode + '<div class = "contact-info"><strong>' + name + '</strong>';
+
+    var info = [party, officeName, phone, site, address];
+    for (var i = 0; i < info.length; i++) {
+        if (info[i] == '') continue; 
+        if (i == 2) // phone
+            s += '<abbr title = "Phone"></abbr>';
+        
+        if (i == 3) {// site
+            s += '<br><a href ="' + info[i] + '">' + info[i] + '</a>';
+            continue;
+        }
+
+        s += info[i] + '<br>';
+    }
+    return s + '</div></li>';
     return '<li class = "rep-list-group-item">' + imgNode + '<div class = "contact-info"><strong>' + name + '</strong>' + party + '<br>' + officeName + '<br>' + address + '</br><abbr title = "Phone"></abbr>' + phone + '<br><a href ="' + site + '">' + site + '</a></div></li>';
 }
 
