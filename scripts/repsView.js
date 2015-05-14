@@ -110,7 +110,7 @@ function writeRepNode(name, officeName, party, phone, site, photo, address) {
             s += '<abbr title = "Phone"></abbr>';
         
         if (i == 4) {// site
-            s += '<br><a href ="' + info[i] + '">' + info[i] + '</a>';
+            s += '<a href ="' + info[i] + '">' + info[i] + '</a>';
             continue;
         }
 
