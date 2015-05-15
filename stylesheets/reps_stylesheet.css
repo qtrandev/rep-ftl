@@ -227,6 +227,14 @@ select:hover {
     font-size: 20px;
 }
 
+.dataContainer {
+    display: none;
+}
+
+#loadingContainer div {
+    border-bottom: none;
+}
+
 @media only screen and (min-width : 320px) and (max-width : 540px) {
 
     .rep-img {

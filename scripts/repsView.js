@@ -7,6 +7,14 @@ $.getScript("http://apis.google.com/js/client.js?onload=load", function() {});
 
 // openState(25.75,-80.36);
 
+function displayDataContainers() {
+    document.getElementById("loadingContainer").style.display = "none";
+    
+    var toDisplay = document.getElementsByClassName("dataContainer");
+    for (var i = 0; i < toDisplay.length; i++)
+        dataContainers[i].style.display = "block";
+}
+
 function updateIssue(input) {
     var sections = [
         document.getElementById('federalSection'),
@@ -148,7 +156,6 @@ function writeRepNode(name, officeName, party, phone, site, photo, address) {
         s += info[i] + '<br>';
     }
     return s + '</div></li>';
-    return '<li class = "rep-list-group-item">' + imgNode + '<div class = "contact-info"><strong>' + name + '</strong>' + party + '<br>' + officeName + '<br>' + address + '</br><abbr title = "Phone"></abbr>' + phone + '<br><a href ="' + site + '">' + site + '</a></div></li>';
 }
 
 /**
@@ -276,6 +283,9 @@ function renderResults(response, rawResponse) {
             }
         }
     }
+    
+
+    displayDataContainers();
     
     openState(25.75,-80.36);
 }
