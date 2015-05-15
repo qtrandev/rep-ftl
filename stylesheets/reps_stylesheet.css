@@ -213,10 +213,6 @@ select:hover {
     margin-top: 0px;
 }
 
-#issueForm {
-    margin: inherit;
-}
-
 .page-header1 {
     margin: 65px 20px 20px 20px;
     font-size: 40px;
