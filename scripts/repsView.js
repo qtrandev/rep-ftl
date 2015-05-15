@@ -7,12 +7,16 @@ $.getScript("http://apis.google.com/js/client.js?onload=load", function() {});
 
 // openState(25.75,-80.36);
 
+function setAllDataContainers(display) {
+    var toDisplay = document.getElementsByClassName("dataContainer");
+    for (var i = 0; i < toDisplay.length; i++)
+        toDisplay[i].style.display = display;
+}
+
 function displayDataContainers() {
     document.getElementById("loadingContainer").style.display = "none";
     
-    var toDisplay = document.getElementsByClassName("dataContainer");
-    for (var i = 0; i < toDisplay.length; i++)
-        toDisplay[i].style.display = "block";
+    setAllDataContainers("block");
 }
 
 function updateIssue(input) {
