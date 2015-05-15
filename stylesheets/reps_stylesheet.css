@@ -84,6 +84,7 @@ img {
     margin-left: auto;
     margin-right: auto;
     width: 800px;
+    max-width: 101%;
     margin-bottom: 8px;
     background-color: #ffffff;
     border: 1px solid transparent;
@@ -119,6 +120,7 @@ img {
     border-radius: 6px;
     max-height: 180px;
     max-width: 180px;
+    display: inline-block;
 }
 
 .rep-icon {
@@ -170,11 +172,10 @@ select:hover {
     font-size: 120%;
     font-style: italic;
     color: #999;
-    margin-top: 25px;
 }
 
 /***************************
- Overwrite Bootstrap Defaults
+ Overwrie Bootstrap Defaults
  ***************************/
 
  .row {
@@ -193,5 +194,22 @@ select:hover {
  }
 
 .main-part {
-    margin-top: 85px;
+    margin-top: 75px;
+}
+
+.pageheader1 {
+    margin: 65px 20px 20px 20px;
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    .rep-img {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .rep-panel-heading {
+        font-size: 30px;
+    }
+
+
 }
