@@ -12,7 +12,7 @@ function displayDataContainers() {
     
     var toDisplay = document.getElementsByClassName("dataContainer");
     for (var i = 0; i < toDisplay.length; i++)
-        dataContainers[i].style.display = "block";
+        toDisplay[i].style.display = "block";
 }
 
 function updateIssue(input) {
