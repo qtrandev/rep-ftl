@@ -7,6 +7,37 @@ $.getScript("http://apis.google.com/js/client.js?onload=load", function() {});
 
 // openState(25.75,-80.36);
 
+function updateIssue(input) {
+    var issueType = input.options[input.selectedIndex].className;
+    // alert('update issue called, on ' + issueType);
+    var sections = [
+        document.getElementById('federalSection'),
+        document.getElementById('stateSection'),
+        document.getElementById('countySection')
+    ];
+
+    for (var i = 0; i < sections.length; i++)
+        sections[i].style.display = "block";
+
+    switch (issueType) {
+        case "County":
+            sections[0].style.display = "none";
+            sections[1].style.display = "none";
+            break;
+        case "Fed":
+            sections[1].style.display = "none";
+            sections[2].style.display = "none";
+            break;
+        case "State":
+            sections[0].style.display = "none";
+            sections[2].style.display = "none";
+            break;
+        case "FedAndState":
+            sections[2].style.display = "none";
+            break;
+    }
+}
+
 function openState(lat,long) {
     $.ajax({ 
         type: "GET",
