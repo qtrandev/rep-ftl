@@ -84,6 +84,7 @@ img {
     margin-left: auto;
     margin-right: auto;
     width: 800px;
+    max-width: 101%;
     margin-bottom: 8px;
     background-color: #ffffff;
     border: 1px solid transparent;
@@ -119,6 +120,7 @@ img {
     border-radius: 6px;
     max-height: 180px;
     max-width: 180px;
+    display: inline-block;
 }
 
 .rep-icon {
@@ -173,7 +175,11 @@ select:hover {
 }
 
 /***************************
+<<<<<<< HEAD
  Overwrite Bootstrap Defaults
+=======
+ Overwrie Bootstrap Defaults
+>>>>>>> 3a9178f7db317c5f73da0e1b04ac0d18ba9deaee
  ***************************/
 
  .row {
@@ -209,4 +215,26 @@ select:hover {
 
 #issueForm {
     margin: inherit;
+}
+
+.page-header1 {
+    margin: 65px 20px 20px 20px;
+    font-size: 40px;
+}
+
+.rep-panel-heading {
+    font-size: 30px;
+}
+
+.header-small {
+    font-size: 20px;
+}
+
+@media only screen and (min-width : 320px) and (max-width : 540px) {
+
+    .rep-img {
+        display: block;
+        margin: 0 auto;
+    }
+
 }
