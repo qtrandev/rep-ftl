@@ -8,13 +8,13 @@ $.getScript("http://apis.google.com/js/client.js?onload=load", function() {});
 // openState(25.75,-80.36);
 
 function updateIssue(input) {
-    var issueType = input.options[input.selectedIndex].className;
-    // alert('update issue called, on ' + issueType);
     var sections = [
         document.getElementById('federalSection'),
         document.getElementById('stateSection'),
         document.getElementById('countySection')
     ];
+
+    var issueType = input.options[input.selectedIndex].className;
 
     for (var i = 0; i < sections.length; i++)
         sections[i].style.display = "block";
