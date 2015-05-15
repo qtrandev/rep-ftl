@@ -194,3 +194,19 @@ select:hover {
 .main-part {
     margin-top: 75px;
 }
+
+#checkboxes .panel-group {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #dddddd;
+    padding-bottom: 10px;
+    padding-left: 20px;
+}
+
+#checkboxes .panel-group h5 {
+    padding-bottom: 15px;
+    margin-top: 0px;
+}
+
+#issueForm {
+    margin: inherit;
+}
