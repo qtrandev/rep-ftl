@@ -274,6 +274,9 @@ function renderResults(response, rawResponse) {
                 case 'county' :
                     $("#county").append(repNode);
                     break;
+                case 'country' :
+                    $("#federal").append(repNode);
+                    break;
                 case 'federal' :
                     $("#federal").append(repNode);
                     break;
