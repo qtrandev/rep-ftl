@@ -235,7 +235,8 @@ function renderResults(response, rawResponse) {
             }
 
             var thisOffice = officeArr[k++];
-            var officeLevel = thisOffice.levels[0];
+            var officeLevel;
+            if (thisOffice.levels) officeLevel = thisOffice.levels[0];
             var officeName = thisOffice.name;
 
             if (value.hasOwnProperty('name'))
