@@ -169,11 +169,11 @@ function renderResults(response, rawResponse) {
     // apparently this function only runs if 
     // it's online, not local.
     
-    var locationId = document.getElementById('locationBlock');
-    if (!response || response.error || response.status !== 'success') {
-        locationId.innerHTML = '<div class = "alert alert-danger">Sorry, we were unable to locate information for the address entered. <a href = "index.html" class = "alert-link"><br>Try again?</a></div>';
-        return;
-    }
+    //var locationId = document.getElementById('locationBlock');
+    //if (!response || response.error || response.status !== 'success') {
+    //    locationId.innerHTML = '<div class = "alert alert-danger">Sorry, we were unable to locate information for the address entered. <a href = "index.html" class = "alert-link"><br>Try again?</a></div>';
+    //    return;
+    //}
 
     var inputObj = response.normalizedInput;
     var normalizedAddress = inputObj.line1 + ', ' + inputObj.city + ' ' +
