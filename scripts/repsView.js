@@ -308,10 +308,9 @@ function parseUrl(str) {
 function lookup(address, callback) {
     //Request object
     var req = gapi.client.request({
-        'path': '/civicinfo/us_v2/representatives/lookup',
-        'method': 'POST',
-        'params': {'includeOffices': 'true'},
-        'body': {'address': address}
+        'path': 'https://www.googleapis.com/civicinfo/v2/representatives',
+        'method': 'GET',
+        'params': {'address': address}
     });
     // ^^ this request only runs if it's online, not local
 
