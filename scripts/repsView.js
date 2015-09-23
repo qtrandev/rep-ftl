@@ -308,7 +308,7 @@ function parseUrl(str) {
 function lookup(address, callback) {
     //Request object
     var req = gapi.client.request({
-        'path': '/civicinfo/us_v1/representatives/lookup',
+        'path': '/civicinfo/us_v2/representatives/lookup',
         'method': 'POST',
         'params': {'includeOffices': 'true'},
         'body': {'address': address}
